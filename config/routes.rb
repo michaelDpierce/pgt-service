@@ -1,0 +1,26 @@
+Rails.application.routes.draw do
+  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+
+  # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
+  # Can be used by load balancers and uptime monitors to verify that the app is live.
+  get "up" => "rails/health#show", as: :rails_health_check
+
+  # Defines the root path route ("/")
+  # root "posts#index"
+
+  # JSON API defaults
+  defaults format: :json do
+    # Hume webhooks (HMAC verified in controller concern)
+    namespace :webhooks do
+      post :hume, to: "hume#create"
+    end
+
+    # Short-lived token for the browser (Next.js calls this)
+    post "/hume/token", to: "hume_tokens#create"
+
+    # Read-only transcripts + optional live append from client
+    resources :chat_sessions, only: [:index, :show] do
+      post :append_message, on: :collection  # optional
+    end
+  end
+end
