@@ -9,13 +9,12 @@ Rails.application.routes.draw do
 
   # JSON API defaults
   defaults format: :json do
-    # Hume webhooks (HMAC verified in controller concern)
     namespace :webhooks do
       post :hume, to: "hume#create"
     end
 
-    # Short-lived token for the browser (Next.js calls this)
     post "/hume/token", to: "hume_tokens#create"
+    post "/hume/sessions", to: "hume_sessions#create"
 
     # Read-only transcripts + optional live append from client
     resources :chat_sessions, only: [:index, :show] do
