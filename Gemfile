@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem "rails", "8.0.2.1"
+gem "rails", "8.0.3"
 gem "pg", "1.6.2"
 gem "solid_cache", "1.0.7"
 gem "bootsnap", "1.18.6", require: false
