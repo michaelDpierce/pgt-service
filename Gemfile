@@ -9,6 +9,7 @@ gem "clerk-sdk-ruby", "4.2.1", require: "clerk"
 gem "ruby-openai", "8.3.0", require: "openai"
 gem "pagy", "9.4.0"
 gem "passenger", "6.1.0"
+gem "ostruct", "0.6.3"
 
 group :development, :test do
   gem "debug", "1.11.0", platforms: %i[mri windows], require: "debug/prelude"
