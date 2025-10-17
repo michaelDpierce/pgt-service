@@ -44,10 +44,7 @@ Rails.application.configure do
   config.active_support.report_deprecations = false
 
   # Replace the default in-process memory cache store with a durable alternative.
-  config.cache_store = :solid_cache_store, {
-    max_age: 60.days.to_i, # hard cap on how long any entry lives
-    max_size: 512.megabytes # hard cap on total cache storage
-  }
+  config.cache_store = :solid_cache_store
 
   config.action_controller.perform_caching = true
 
