@@ -1,24 +1,7 @@
-# README
+# PGT Service Demo ReadMe
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Proprietary Notice
 
-Things you may want to cover:
+All rights reserved.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This software and associated documentation files are proprietary to PeerGroupTools. Unauthorized copying, distribution, modification, or use of this software is strictly prohibited.

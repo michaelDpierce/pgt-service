@@ -44,10 +44,15 @@ Rails.application.configure do
   config.active_support.report_deprecations = false
 
   # Replace the default in-process memory cache store with a durable alternative.
-  config.cache_store = :solid_cache_store
+  config.cache_store = :solid_cache_store, {
+    max_age: 60.days.to_i, # hard cap on how long any entry lives
+    max_size: 512.megabytes # hard cap on total cache storage
+  }
+
+  config.action_controller.perform_caching = true
 
   # Replace the default in-process and non-durable queuing backend for Active Job.
-  config.active_job.queue_adapter = :solid_queue
+  config.active_job.queue_adapter = :inline # todo Sidekiq
   config.solid_queue.connects_to = { database: { writing: :queue } }
 
   # Ignore bad email addresses and do not raise email delivery errors.

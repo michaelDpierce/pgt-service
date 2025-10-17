@@ -13,4 +13,5 @@ test:
 
 production:
   database: cache
+  max_size: <%= 512.megabytes %>
   <<: *default

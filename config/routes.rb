@@ -9,16 +9,13 @@ Rails.application.routes.draw do
 
   # JSON API defaults
   defaults format: :json do
+    resources :meetings, only: [ :create, :index, :show, :update, :destroy ]
+
     namespace :webhooks do
       post :hume, to: "hume#create"
     end
 
     post "/hume/token", to: "hume_tokens#create"
     post "/hume/sessions", to: "hume_sessions#create"
-
-    # Read-only transcripts + optional live append from client
-    resources :chat_sessions, only: [:index, :show] do
-      post :append_message, on: :collection  # optional
-    end
   end
 end
