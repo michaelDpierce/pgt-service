@@ -51,7 +51,11 @@ class MeetingsController < ApplicationController
   end
 
   def destroy
-    @meeting.destroy!
+    ActiveRecord::Base.transaction do
+      hume_session = @meeting.hume_session
+      @meeting.destroy!
+      hume_session&.destroy!
+    end
     head :no_content
   end
 

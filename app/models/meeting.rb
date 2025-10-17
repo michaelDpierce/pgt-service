@@ -4,5 +4,5 @@ class Meeting < ApplicationRecord
   validates :hume_config, presence: true
 
   belongs_to :user
-  has_one :hume_session, dependent: :destroy, inverse_of: :meeting
+  belongs_to :hume_session, optional: true, inverse_of: :meeting
 end
