@@ -15,5 +15,5 @@ group :development, :test do
   gem "debug", "1.11.0", platforms: %i[mri windows], require: "debug/prelude"
   gem "brakeman", "7.1.0", require: false
   gem "rubocop-rails-omakase", "1.1.0", require: false
-  gem "dotenv-rails", "3.1.8"
+  gem "dotenv-rails", "3.2.0"
 end
