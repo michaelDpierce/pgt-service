@@ -5,7 +5,7 @@ gem "pg", "1.6.2"
 gem "solid_cache", "1.0.7"
 gem "bootsnap", "1.18.6", require: false
 gem "rack-cors", "3.0.0"
-gem "clerk-sdk-ruby", "4.2.1", require: "clerk"
+gem "clerk-sdk-ruby", "5.0.0", require: "clerk"
 gem "ruby-openai", "8.3.0", require: "openai"
 gem "pagy", "9.4.0"
 gem "passenger", "6.1.0"
